@@ -103,6 +103,7 @@ body{
 }
 
 .lista h2{
+	margin-top: 35px;
 	color: white;
 	font-weight: bold;
 }
@@ -116,6 +117,15 @@ body{
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+}
+
+.tarefas::-webkit-scrollbar {
+    width: 3px;
+}
+
+.tarefas::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 6px;
 }
 
 .tarefa{
@@ -137,6 +147,16 @@ body{
 	flex-direction: column;
 }
 
+.content::-webkit-scrollbar {
+    height: 3px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 6px;
+}
+
+
 .content label{
 	font-weight: bold;
 	font-size: 14pt;
@@ -148,6 +168,7 @@ body{
 	align-items: flex-end;
 	justify-content: flex-start;
 	flex-direction: column;
+	margin-right: 5px;
 }
 
 .buttons button{
@@ -179,6 +200,50 @@ body{
 .deleta:hover{
 	background: white;
 	color: indianred;
+}
+
+@media only screen and (max-width: 950px){
+	.main{
+		flex-direction: column;
+	}
+
+	.left{
+		width: 100vw;
+		height: 35vh;
+	}
+
+	.right{
+		width: 100vw;
+		height: 65vh;
+	}
+
+	.entrada, .lista{
+		width: 100vw;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.lista{
+		height: 65vh;
+	}
+
+	.tarefas{
+		margin-top: 30px;
+		width: 85%;
+		height: 65;
+	}
+
+	.entrada img{
+		display: none;
+	}
+	.lista h2{
+		display: none;
+	}
+
+	.buttons button{
+		font-size: 2vw;
+	}
 }
 
 @media only screen and (max-width: 600px){

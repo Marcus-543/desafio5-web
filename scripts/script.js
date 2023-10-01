@@ -7,7 +7,7 @@ tarefas = JSON.parse(tarefasGuardadas) || [];
 mostrarTarefas();
 
 function mostrarTarefas() {
-    lista.innerHTML = ``;
+    lista.innerHTML = '';
     tarefas.forEach((tarefa, index) => {
         var tarefaItem = document.createElement('div');
         tarefaItem.classList.add('tarefa');
@@ -33,18 +33,28 @@ function cadastrar() {
 
     if (titulo == '' || conteudo == '') {
         alert('Por favor, preencha todos os campos.');
-        return;
-    }
+    }else{
+        var novaTarefa = { titulo, conteudo };
+        document.getElementById("titulo").value ='';
+        document.getElementById("conteudo").value ='';
 
-    var novaTarefa = { titulo, conteudo };
-    tarefas.push(novaTarefa);
-    localStorage.setItem('tarefas', JSON.stringify(tarefas));
-    mostrarTarefas();
+        tarefas.push(novaTarefa);
+        localStorage.setItem('tarefas', JSON.stringify(tarefas));
+        mostrarTarefas();
+    }
 }
 
 function editar(index){
-    const novoTitulo = prompt('Novo título:', tarefas[index].titulo);
-    const novoConteudo = prompt('Nova descrição:', tarefas[index].conteudo);
+    var novoTitulo = prompt('Novo título:', tarefas[index].titulo);
+    while (novoTitulo == ''){
+        novoTitulo = prompt('Novo título:', tarefas[index].titulo);
+    }
+
+    var novoConteudo = prompt('Novo Conteudo:', tarefas[index].conteudo);
+    while (novoConteudo == ''){
+        novoConteudo = prompt('Novo Conteudo:', tarefas[index].conteudo);
+    }
+
     if (novoTitulo !== null && novoConteudo !== null) {
         tarefas[index] = { titulo: novoTitulo, conteudo: novoConteudo };
         localStorage.setItem('tarefas', JSON.stringify(tarefas));
@@ -53,7 +63,10 @@ function editar(index){
 }
 
 function deletar(index){
-    tarefas.splice(index, 1);
-    localStorage.setItem('tarefas', JSON.stringify(tarefas));
-    mostrarTarefas();
+    var confirmacao = confirm('Tem certeza de que deseja excluir esta tarefa?');
+    if (confirmacao) {
+        tarefas.splice(index, 1);
+        localStorage.setItem('tarefas', JSON.stringify(tarefas));
+        mostrarTarefas();
+    }
 }
