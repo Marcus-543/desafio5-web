@@ -1,0 +1,226 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+*body{
+	box-sizing: border-box;
+}
+
+.main{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.left{
+	width: 50vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.right{
+	width: 50vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.entrada{
+	width: 35vw;
+	height: 75vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	box-shadow: 0px 10px 20px black;
+	background: black;
+}
+
+.entrada img{
+	width: 30%;
+	color: white;
+	margin-bottom: 80px;
+}
+
+.entrada input{
+	height: 30px;
+	background: white;
+	border: white;
+	font-size: 12pt;
+	width: 80%;
+	border-radius: 5px;
+
+}
+
+.entrada textarea{
+	border-radius: 5px;
+	margin-top: 10px;
+	border: white;
+	background: white;
+	width: 80%;
+	height: 60px;
+	font-size: 12pt;
+}
+
+.entrada button{
+	cursor: pointer;
+	font-size: 15pt;
+	font-weight: bold;
+	margin-top: 30px;
+	height: 40px;
+	background: seagreen;
+	color: white;
+	border: none;
+	width: 80%;
+	border-radius: 5px;
+}
+
+.entrada button:hover{
+	background: white;
+	color: seagreen;
+}
+
+.lista{
+	width: 35vw;
+	height: 75vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	box-shadow: 0px 10px 20px black;
+	background: black;
+}
+
+.lista h2{
+	color: white;
+	font-weight: bold;
+}
+
+.tarefas{
+	margin-top: 15px;
+	width: 90%;
+	height: 100%;
+    overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.tarefa{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.content{
+	margin-right: 15px;
+	overflow-x: auto;
+	width: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.content label{
+	font-weight: bold;
+	font-size: 14pt;
+}
+
+.buttons{
+	width: 20%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.buttons button{
+	cursor: pointer;
+	text-align: center;
+	font-size: 14pt;
+	font-weight: bold;
+	height: 30px;
+	border: none;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.edita{
+	background: seagreen;
+	color: white;
+}
+
+.edita:hover{
+	background: white;
+	color: seagreen;
+}
+
+.deleta{
+	background: indianred;
+	color: white;
+}
+
+.deleta:hover{
+	background: white;
+	color: indianred;
+}
+
+@media only screen and (max-width: 600px){
+	.main{
+		flex-direction: column;
+	}
+
+	.left{
+		width: 100vw;
+		height: 35vh;
+	}
+
+	.right{
+		width: 100vw;
+		height: 65vh;
+	}
+
+	.entrada, .lista{
+		width: 100vw;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.lista{
+		height: 65vh;
+	}
+
+	.tarefas{
+		margin-top: 30px;
+		width: 85%;
+		height: 65;
+	}
+
+	.entrada img{
+		display: none;
+	}
+	.lista h2{
+		display: none;
+	}
+
+	.buttons button{
+		font-size: 4vw;
+	}
+}

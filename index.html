@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <title>Gerenciador de Tarefas</title>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="entrada">
+                <img src="./images/image.png" alt="Ícone de tarefa">
+                <input type="text" placeholder="Título" id="titulo">
+                <textarea placeholder="Conteúdo" id="conteudo"></textarea>
+                <button onclick="cadastrar()">Cadastrar</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="lista" id="lista">
+                <h2>Tarefas</h2>
+                <div class="tarefas" id="tarefas"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="./scripts/script.js"></script>
+</html>
