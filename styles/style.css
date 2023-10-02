@@ -108,6 +108,13 @@ body{
 	font-weight: bold;
 }
 
+
+.lista hr{
+	margin-top: -10px;
+	width: 98%;
+	margin-left: 0;
+}
+
 .tarefas{
 	margin-top: 15px;
 	width: 90%;

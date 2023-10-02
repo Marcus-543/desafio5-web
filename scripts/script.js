@@ -7,15 +7,17 @@ tarefas = JSON.parse(tarefasGuardadas) || [];
 mostrarTarefas();
 
 function mostrarTarefas() {
+    var count = 1;
     lista.innerHTML = '';
     tarefas.forEach((tarefa, index) => {
         var tarefaItem = document.createElement('div');
+        var separador = document.createElement('hr');
         tarefaItem.classList.add('tarefa');
         tarefaItem.innerHTML = `
             <div class="content">
-                <label>${tarefa.titulo}</label>
+                <label>Título: ${tarefa.titulo}</label>
                 <br>
-                <label>${tarefa.conteudo}</label>
+                <label>Conteúdo: ${tarefa.conteudo}</label>
             </div>
             <div class="buttons">
                 <button class='edita' onclick='editar(${index})'>Editar</button>
@@ -24,6 +26,10 @@ function mostrarTarefas() {
             </div>
         `;
         lista.appendChild(tarefaItem);
+        if (count != tarefas.length) {
+            lista.appendChild(separador);
+        }
+        count = count + 1;
     });
 }
 
